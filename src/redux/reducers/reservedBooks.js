@@ -27,6 +27,11 @@ export const ReservedBookReducer = (
           (book) => book.reserved_book !== action.payload
         ),
       };
+    case actionTypes.RETURN_BOOK_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
 
     default:
       return state;

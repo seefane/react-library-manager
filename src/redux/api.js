@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const authToken = process.env.REACT_APP_AUTH_TOKEN;
-const url = "https://restlibrarymanager.herokuapp.com/";
+const url = "http://127.0.0.1:8000/";
 const config = {
   headers: {
     Authorization: `Token ${authToken}`,

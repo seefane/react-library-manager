@@ -15,7 +15,7 @@ export const getReservedbooks = () => async (dispatch) => {
     console.log(error);
     dispatch({
       type: actionTypes.GET_RESERVEDBOOKS_FAIL,
-      payload: error,
+      payload: error.message,
     });
   }
 };
@@ -29,6 +29,9 @@ export const returnBook = (bookid) => async (dispatch) => {
     });
   } catch (error) {
     console.error(bookid);
-    console.log(error.message);
+    dispatch({
+      type: actionTypes.RETURN_BOOK_FAIL,
+      payload: error.message,
+    });
   }
 };
